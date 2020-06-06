@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ClaroNet.views.LoginPage"
+            BackgroundImageSource="FondoLogin">
+    <ContentPage.Content>
+        <StackLayout >
+            <Grid>
+                <Image Source="logoRojo" 
+                       VerticalOptions="Start"
+                       HorizontalOptions="Center"
+                       HeightRequest="75"
+                       Margin="0,240,0,0"
+                       />
+                <Image Source="loginUser" 
+                       VerticalOptions="Start"
+                       HorizontalOptions="Center"
+                       HeightRequest="100"
+                       Margin="0,130,0,0"
+                       />
+                
+                <StackLayout Padding="0" Margin="20,200,20,0" HorizontalOptions="FillAndExpand"
+                             VerticalOptions="Center">
+                    <Frame  BackgroundColor="Transparent" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
+
+                        <StackLayout>          
+                            <StackLayout Padding="0" Margin="30,150">
+
+                                <Frame BackgroundColor="White"  Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                            <Image Source="userImg" Aspect="AspectFill" Margin="0"/>
+                                        </Frame>
+
+                                        <Entry Placeholder="Email" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                    </StackLayout>
+                                </Frame>
+
+                                <Frame BackgroundColor="White"  Margin="0,40,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                            <Image Source="lock" Aspect="Fill" Margin="0"/>
+                                        </Frame>
+                                        <Entry Placeholder="Password" IsPassword="True" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                    </StackLayout>
+                                </Frame>
+
+                                <StackLayout  Orientation="Horizontal"  Margin="0,40,0,0">
+                                    <Switch IsToggled="False"  OnColor="Red" HeightRequest="30"/>
+                                    <Label Text="Remember me" TextColor="#545454" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                                    <Label Text="forgot password" TextColor="Black" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                                </StackLayout>
+                                <Button Text="Ingresar" Margin="0,40,0,0"  BackgroundColor="#f62323" TextColor="White" CornerRadius="30" />                                                            
+
+                            </StackLayout>
+                        </StackLayout>
+
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

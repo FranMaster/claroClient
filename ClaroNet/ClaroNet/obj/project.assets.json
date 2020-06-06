@@ -573,11 +573,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\A308610\\source\\repos\\ClaroClient\\ClaroNet\\ClaroNet\\ClaroNet.csproj",
+      "projectUniqueName": "C:\\Users\\A308610\\source\\repos\\FranMaster\\claroClient\\ClaroNet\\ClaroNet\\ClaroNet.csproj",
       "projectName": "ClaroNet",
-      "projectPath": "C:\\Users\\A308610\\source\\repos\\ClaroClient\\ClaroNet\\ClaroNet\\ClaroNet.csproj",
+      "projectPath": "C:\\Users\\A308610\\source\\repos\\FranMaster\\claroClient\\ClaroNet\\ClaroNet\\ClaroNet.csproj",
       "packagesPath": "C:\\Users\\A308610\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\A308610\\source\\repos\\ClaroClient\\ClaroNet\\ClaroNet\\obj\\",
+      "outputPath": "C:\\Users\\A308610\\source\\repos\\FranMaster\\claroClient\\ClaroNet\\ClaroNet\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
