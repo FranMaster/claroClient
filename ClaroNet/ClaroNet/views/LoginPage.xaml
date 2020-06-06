@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ClaroNet.views.LoginPage"
-            BackgroundImageSource="FondoLogin">
+            BackgroundImageSource="FondoLogin"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout >
             <Grid>
@@ -53,7 +54,12 @@
                                     <Label Text="Remember me" TextColor="#545454" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                                     <Label Text="forgot password" TextColor="Black" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                                 </StackLayout>
-                                <Button Text="Ingresar" Margin="0,40,0,0"  BackgroundColor="#f62323" TextColor="White" CornerRadius="30" />                                                            
+                                <Button Text="Ingresar"
+                                        Margin="0,20,0,0" 
+                                        BackgroundColor="#f62323"
+                                        TextColor="White"
+                                        CornerRadius="30" 
+                                        Clicked="Button_Clicked"/>                                                            
 
                             </StackLayout>
                         </StackLayout>

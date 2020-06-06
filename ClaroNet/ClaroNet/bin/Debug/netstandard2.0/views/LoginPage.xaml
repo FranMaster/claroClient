@@ -5,23 +5,30 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ClaroNet.views.LoginPage"
-            BackgroundImageSource="FondoLogin">
+            BackgroundImageSource="FondoLogin"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout >
             <Grid>
-              
+                <Image Source="logoRojo" 
+                       VerticalOptions="Start"
+                       HorizontalOptions="Center"
+                       HeightRequest="75"
+                       Margin="0,240,0,0"
+                       />
+                <Image Source="loginUser" 
+                       VerticalOptions="Start"
+                       HorizontalOptions="Center"
+                       HeightRequest="100"
+                       Margin="0,130,0,0"
+                       />
+                
                 <StackLayout Padding="0" Margin="20,200,20,0" HorizontalOptions="FillAndExpand"
                              VerticalOptions="Center">
                     <Frame  BackgroundColor="Transparent" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
 
-                        <StackLayout>
-
-
-                            <StackLayout Margin="10">
-                                <Label Text="SIGN IN" TextColor="Black" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
-                            </StackLayout>
-
-                            <StackLayout Padding="0" Margin="15,10">
+                        <StackLayout>          
+                            <StackLayout Padding="0" Margin="30,150">
 
                                 <Frame BackgroundColor="White"  Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                                     <StackLayout Orientation="Horizontal">
@@ -29,44 +36,32 @@
                                             <Image Source="userImg" Aspect="AspectFill" Margin="0"/>
                                         </Frame>
 
-                                        <Entry Placeholder="Email" TextColor="HotPink" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                        <Entry Placeholder="Email" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                     </StackLayout>
                                 </Frame>
 
-                                <Frame BackgroundColor="White"  Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                <Frame BackgroundColor="White"  Margin="0,40,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                                     <StackLayout Orientation="Horizontal">
                                         <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
                                             <Image Source="lock" Aspect="Fill" Margin="0"/>
                                         </Frame>
-                                        <Entry Placeholder="Password" IsPassword="True" TextColor="HotPink" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                        <Entry Placeholder="Password" IsPassword="True" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                     </StackLayout>
                                 </Frame>
 
-                                <StackLayout  Orientation="Horizontal">
-                                    <CheckBox IsChecked="False" Color="#f62323" />
-                                    <Label Text="Remember me" TextColor="DarkGray" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
-                                    <Label Text="Forgot Password" TextColor="Black" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                                <StackLayout  Orientation="Horizontal"  Margin="0,40,0,0">
+                                    <Switch IsToggled="False"  OnColor="Red" HeightRequest="30"/>
+                                    <Label Text="Remember me" TextColor="#545454" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                                    <Label Text="forgot password" TextColor="Black" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                                 </StackLayout>
-                                <Button Text="Ingresar" BackgroundColor="#f62323" TextColor="White" CornerRadius="30" />
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                    <Label Text="Still Not Connected ?" TextColor="DarkGray" FontSize="Small"/>
-                                    <Label Text="Sign Up" TextColor="Black" FontAttributes="Bold" FontSize="Small"/>
-                                </StackLayout>
-
-                                <StackLayout Margin="0,25,0,0" Padding="0">
-                                    <Grid>
-                                        <BoxView BackgroundColor="DarkGray" HeightRequest="1" WidthRequest="150"  HorizontalOptions="Center" VerticalOptions="Center"/>
-                                        <Frame BackgroundColor="White" HeightRequest="45" WidthRequest="45" CornerRadius="45" HasShadow="False" BorderColor="DarkGray" Margin="0" HorizontalOptions="Center" Padding="0">
-                                            <Label Text="OR" TextColor="DarkGray" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                                        </Frame>
-                                    </Grid>
-                                </StackLayout>
-
-                              
+                                <Button Text="Ingresar"
+                                        Margin="0,20,0,0" 
+                                        BackgroundColor="#f62323"
+                                        TextColor="White"
+                                        CornerRadius="30" 
+                                        Clicked="Button_Clicked"/>                                                            
 
                             </StackLayout>
-
-
                         </StackLayout>
 
                     </Frame>

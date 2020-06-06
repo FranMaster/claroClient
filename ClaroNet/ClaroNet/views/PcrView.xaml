@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ClaroNet.views.PcrView"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <!--header-->
+            <Grid BackgroundColor="Red" VerticalOptions="Start"
+                  Padding="15">
+                <Image Source="logoBlanco" HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       WidthRequest="100"/>
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="End"
+                             VerticalOptions="Center">
+                    <Label Text="Francisco Jimenez"
+                           TextColor="White"
+                           VerticalTextAlignment="Center"
+                           Margin="0,0,10,0"
+                           FontAttributes="Bold"/>
+                    <Image Source="loginUser"                                          
+                       HeightRequest="45"
+                           VerticalOptions="Start"
+                       
+                       />
+                </StackLayout>
+            </Grid>
+            <Grid Margin="0,100,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.3*"/>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" Orientation="Horizontal">
+                    <Label HorizontalOptions="Center"
+                           Text="Saldo para Cargas:" 
+                           TextColor="Red"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Start"
+                           Padding="15"/>                    
+                    <Frame BackgroundColor="Red" 
+                           HorizontalOptions="Center" 
+                           VerticalOptions="Start"                           
+                           Padding="0"
+                           Margin="0,0,10,0"
+                           CornerRadius="10">
+                        <StackLayout Orientation="Horizontal">
+                            <Label   FontAttributes="None"
+                                      HorizontalOptions="Center"
+                                      HorizontalTextAlignment="Center"
+                                      VerticalOptions="Center" 
+                                      VerticalTextAlignment="Center"
+                                      Margin="20"
+                                      Text="$ 500"
+                                      TextColor="White"
+                                      WidthRequest="300"
+                                      FontSize="Medium">
+                            </Label>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <Grid Grid.Row="1">
+                    <Label Text="Opciones:" 
+                           TextColor="Red"
+                           FontAttributes="Bold"
+                           
+                           Margin="20,0,0,20"/>
+                </Grid>
+                <StackLayout Grid.Row="1" Orientation="Horizontal"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center">                 
+                    <StackLayout Margin="0,0,30,0">
+                        <ImageButton Source="plus" 
+                                 BackgroundColor="Transparent"
+                                 HeightRequest="80"/>
+                        <Label Text="Recargar" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Margin="0,0,30,0">
+                        <ImageButton Source="stats" 
+                                 BackgroundColor="Transparent"
+                                 HeightRequest="80"/>
+                        <Label Text="stats" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <ImageButton Source="exit" 
+                                 BackgroundColor="Transparent"
+                                 HeightRequest="80"/>
+                        <Label Text="salir" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                </StackLayout>
+                <BoxView BackgroundColor="Red"
+                         VerticalOptions="End"
+                         HorizontalOptions="FillAndExpand"
+                         Margin="10"
+                         HeightRequest="1"/>
+                <BoxView Grid.Row="1" BackgroundColor="Red"
+                         VerticalOptions="End"
+                         HorizontalOptions="FillAndExpand"
+                         Margin="10"
+                         HeightRequest="1"/>
+                <Grid  Grid.Row="2" Margin="0,0,0,20">
+                    <Label Text="Recargas Recientes:" 
+                           TextColor="Red"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Start"
+                           Margin="20,0,0,20"/>
+                    <ListView 
+                          ItemsSource="{Binding ListaRecientes}"
+                          HorizontalOptions="Center"
+                          HasUnevenRows="True"
+                          Margin="20,25,20,20">
+                        <ListView.Header>
+                            <Grid Margin="0,20,0,0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Numero" 
+                                       TextColor="Black"
+                                       FontAttributes="Bold"
+                                       HorizontalTextAlignment="Center"
+                                        Margin="0,0,0,20"
+                                         />
+                                <Label Text="Valor" 
+                                       TextColor="Black"
+                                       FontAttributes="Bold"
+                                       Grid.Column="1" 
+                               HorizontalTextAlignment="Center"/>
+                                <Label Text="Fecha"
+                                       FontAttributes="Bold"
+                                       TextColor="Black" 
+                                       Grid.Column="2" 
+                               HorizontalTextAlignment="Center"
+                               Margin="0,0,0,20"/>
+                            </Grid>
+                        </ListView.Header>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Padding="5">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding Numero}" HorizontalTextAlignment="Center"   />
+                                        <Label Text="{Binding Valor}" HorizontalTextAlignment="Center"  Grid.Column="1" />
+                                        <Label Text="{Binding Fecha}" HorizontalTextAlignment="Center"  Grid.Column="2" />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid >                
+            </Grid>
+            <Grid VerticalOptions="End" 
+                  HorizontalOptions="Center"
+                  Margin="0,0,0,10">
+                <Label Text="Versión 1.0"
+                       />
+            </Grid>
+           
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
