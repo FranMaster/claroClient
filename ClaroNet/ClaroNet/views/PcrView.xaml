@@ -76,6 +76,7 @@
                     <StackLayout Margin="0,0,30,0">
                         <ImageButton Source="plus" 
                                  BackgroundColor="Transparent"
+                                 Clicked="ImageButton_Clicked_1"
                                  HeightRequest="80"/>
                         <Label Text="Recargar" HorizontalTextAlignment="Center"/>
                     </StackLayout>
@@ -89,7 +90,8 @@
                     <StackLayout>
                         <ImageButton Source="exit" 
                                  BackgroundColor="Transparent"
-                                 HeightRequest="80"/>
+                                 HeightRequest="80"
+                                 Clicked="ImageButton_Clicked"/>
                         <Label Text="salir" HorizontalTextAlignment="Center"/>
                     </StackLayout>
                 </StackLayout>
