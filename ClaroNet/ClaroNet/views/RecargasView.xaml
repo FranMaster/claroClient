@@ -3,9 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ClaroNet.viewModels"
              mc:Ignorable="d"
              x:Class="ClaroNet.views.RecargasView"
              NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <vm:RecargasViewModel />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid>
             <!--header-->
@@ -47,7 +51,7 @@
                                         <Image Source="telephone" Aspect="AspectFill" Margin="0"/>
                                     </Frame>
 
-                                    <Entry Placeholder="Ingresa Número" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                    <Entry Placeholder="Ingresa Número" Text="{Binding Telefono}" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                 </StackLayout>
                             </Frame>
 
@@ -56,7 +60,7 @@
                                     <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
                                         <Image Source="moneda" Aspect="Fill" Margin="0"/>
                                     </Frame>
-                                    <Entry Placeholder="Ingresa Monto" IsPassword="True" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                    <Entry Placeholder="Ingresa Monto" IsPassword="True" Text="{Binding Monto}" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                 </StackLayout>
                             </Frame>
 
@@ -66,7 +70,8 @@
                                         BackgroundColor="#f62323"
                                         TextColor="White"
                                         CornerRadius="30" 
-                                        Clicked="Button_Clicked"/>
+                                        Command="{Binding btnRecargar}"
+                                        />
                             
                             <StackLayout  Orientation="Vertical"
                                           Margin="0,40,0,0">
@@ -78,7 +83,7 @@
                                         TextColor="Black" 
                                         BackgroundColor="Transparent"                                  
                                         HorizontalOptions="Center"
-                                            Clicked="Button_Clicked_1"
+                                           
                                         />                                  
                                 </StackLayout>                               
                                

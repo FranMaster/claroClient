@@ -1,11 +1,13 @@
 ﻿using ClaroNet.models;
 using ClaroNet.Services;
 using ClaroNet.Services.RecargasResponse;
+using ClaroNet.views;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using Xamarin.Forms;
 
 namespace ClaroNet.viewModels
 {
@@ -49,9 +51,11 @@ namespace ClaroNet.viewModels
 		public RelayCommand salir => new RelayCommand(btnSalir);
 
 
-		private void btnNuevaRecarga()
+		private async void btnNuevaRecarga()
 		{
-
+			RecargasView vw = new RecargasView();
+			vw.BindingContext = new RecargasViewModel();
+			await Application.Current.MainPage.Navigation.PushAsync(vw);
 		}
 		private void btnStats()
 		{
