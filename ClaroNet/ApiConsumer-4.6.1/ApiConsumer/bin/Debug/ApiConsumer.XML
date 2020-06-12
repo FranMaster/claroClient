@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiConsumer</name>
+    </assembly>
+    <members>
+        <member name="T:ApiConsumer.ExceptionHelper">
+            <summary>
+            Custom Exception para generar mensaje controlado cuando falla una petición http
+            </summary>
+        </member>
+        <member name="M:ApiConsumer.ExceptionHelper.#ctor(System.Net.HttpStatusCode,System.String,System.String)">
+            <summary>
+            Custom Exception para generar mensaje controlado cuando falla una petición http
+            </summary>
+            <param name="statusCode">Codigo de estado de respuesta</param>
+            <param name="message">Request message</param>
+            <param name="responseContent">Contenido de respuesta</param>
+        </member>
+        <member name="T:ApiConsumer.GenericResponse`1">
+            <summary>
+            Clase GenericResponse que será devuelta en una petición http
+            </summary>
+            <typeparam name="T">Objecto a retornar en la propiedad ObjectData</typeparam>
+        </member>
+        <member name="P:ApiConsumer.GenericResponse`1.MessageError">
+            <summary>
+            Mensaje que devuelve la ejecución de un método http
+            </summary>
+        </member>
+        <member name="P:ApiConsumer.GenericResponse`1.Success">
+            <summary>
+            Variable booleana que indica el estado de la petición
+            </summary>
+        </member>
+        <member name="P:ApiConsumer.GenericResponse`1.ObjectData">
+            <summary>
+            Respuesta de la petición, mapeado en un objecto T
+            </summary>
+        </member>
+        <member name="P:ApiConsumer.GenericResponse`1.StringData">
+            <summary>
+            Respuesta de la petición como string
+            </summary>
+        </member>
+        <member name="T:ApiConsumer.BaseService">
+            <summary>
+            Clase base que contiene los métodos http
+            </summary>
+        </member>
+        <member name="M:ApiConsumer.BaseService.Get``1(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.List{System.String}},System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)">
+            <summary>
+            Método encargado de realizar petición HTTP - GET
+            </summary>
+            <typeparam name="T">Modelo de respuesta según contrato</typeparam>
+            <param name="apiUrl">Url/Host de la API</param>
+            <param name="controllerMethodUrl">Controlar/acción a ejecutar</param>
+            <param name="queryStringParameters">Dictionario de parámetros a enviar por querystring en la petición</param>
+            <param name="specificHeaders">Diccionario de headers a enviar en la petición</param>
+            <param name="returnJsonObject">Variable booleana para deserializar objecto si la api retorna un json</param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiConsumer.BaseService.Post``1(System.String,System.String,System.Object,System.Collections.Generic.IDictionary{System.String,System.String},System.String,System.Boolean)">
+            <summary>
+            Método encargado de real zizar petición HTTP - POST
+            </summary>
+            <typeparam name="T">Modelo de respuesta según contrato</typeparam>
+            <param name="apiUrl">Url/Host de la API</param>
+            <param name="controllerMethodUrl">Controlar/acción a ejecutar</param>
+            <param name="BodyParameters">Objeto a enviar en la petición</param>
+            <param name="specificHeaders">Diccionario de headers a enviar en la petición</param>
+            <param name="contentHeader">Header de contenido a enviar en la petición</param>
+            <param name="returnJsonObject">Variable booleana para deserializar objecto si la api retorna un json</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

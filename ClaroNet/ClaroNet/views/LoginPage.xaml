@@ -5,9 +5,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ClaroNet.views.LoginPage"
-            BackgroundImageSource="FondoLogin"
+             BackgroundImageSource="FondoLogin"
+             xmlns:vm="clr-namespace:ClaroNet.viewModels"
              NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
+        
         <StackLayout >
             <Grid>
                 <Image Source="logoRojo" 
@@ -36,7 +41,7 @@
                                             <Image Source="userImg" Aspect="AspectFill" Margin="0"/>
                                         </Frame>
 
-                                        <Entry Placeholder="Email" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                        <Entry x:Name="Email" Placeholder="Email" Text="{Binding Email}" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                     </StackLayout>
                                 </Frame>
 
@@ -45,7 +50,7 @@
                                         <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
                                             <Image Source="lock" Aspect="Fill" Margin="0"/>
                                         </Frame>
-                                        <Entry Placeholder="Password" IsPassword="True" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                        <Entry Placeholder="Password" x:Name="Pass" Text="{Binding Password}" IsPassword="True" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                     </StackLayout>
                                 </Frame>
 
@@ -59,7 +64,7 @@
                                         BackgroundColor="#f62323"
                                         TextColor="White"
                                         CornerRadius="30" 
-                                        Clicked="Button_Clicked"/>                                                            
+                                       Command="{Binding btnLogin}"/>                                                            
 
                             </StackLayout>
                         </StackLayout>

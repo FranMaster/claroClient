@@ -1,0 +1,16 @@
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Release\ApiConsumer.dll.config
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Release\ApiConsumer.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Release\ApiConsumer.pdb
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Release\Newtonsoft.Json.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Release\System.Net.Http.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Release\System.Net.Http.Extensions.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Release\System.Net.Http.Formatting.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Release\System.Net.Http.Primitives.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Release\System.Security.Cryptography.Algorithms.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Release\System.Security.Cryptography.Encoding.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Release\System.Security.Cryptography.Primitives.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Release\System.Security.Cryptography.X509Certificates.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Release\Newtonsoft.Json.xml
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\obj\Release\ApiConsumer.csprojResolveAssemblyReference.cache
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\obj\Release\ApiConsumer.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\obj\Release\ApiConsumer.pdb

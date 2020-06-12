@@ -10,6 +10,7 @@ C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet\obj\Debug
 C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet\obj\Debug\netstandard2.0\views\HistorialView.xaml.g.cs
 C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet\obj\Debug\netstandard2.0\views\LoginPage.xaml.g.cs
 C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet\obj\Debug\netstandard2.0\views\PcrView.xaml.g.cs
+C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet\obj\Debug\netstandard2.0\views\PortalClaro.xaml.g.cs
 C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet\obj\Debug\netstandard2.0\views\RecargasView.xaml.g.cs
 C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet\obj\Debug\netstandard2.0\ClaroNet.AssemblyInfoInputs.cache
 C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet\obj\Debug\netstandard2.0\ClaroNet.AssemblyInfo.cs
@@ -17,5 +18,3 @@ C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet\obj\Debug
 C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet\obj\Debug\netstandard2.0\ClaroNet.dll
 C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet\obj\Debug\netstandard2.0\ref\ClaroNet.dll
 C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet\obj\Debug\netstandard2.0\ClaroNet.pdb
-C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet\obj\Debug\netstandard2.0\ClaroNet.csprojAssemblyReference.cache
-C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet\obj\Debug\netstandard2.0\views\PortalClaro.xaml.g.cs

@@ -5,7 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ClaroNet.views.PcrView"
+             xmlns:vm="clr-namespace:ClaroNet.viewModels"
              NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <vm:PcrViewModel />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid>
             <!--header-->
@@ -17,7 +21,7 @@
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="End"
                              VerticalOptions="Center">
-                    <Label Text="Francisco Jimenez"
+                    <Label Text="{Binding NombreUsuario}"
                            TextColor="White"
                            VerticalTextAlignment="Center"
                            Margin="0,0,10,0"
@@ -111,8 +115,7 @@
                            FontAttributes="Bold"
                            VerticalTextAlignment="Start"
                            Margin="20,0,0,20"/>
-                    <ListView 
-                          ItemsSource="{Binding ListaRecientes}"
+                    <ListView  ItemsSource="{Binding ListaRecientes}"                          
                           HorizontalOptions="Center"
                           HasUnevenRows="True"
                           Margin="20,25,20,20">
@@ -151,8 +154,8 @@
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <Label Text="{Binding Numero}" HorizontalTextAlignment="Center"   />
-                                        <Label Text="{Binding Valor}" HorizontalTextAlignment="Center"  Grid.Column="1" />
+                                        <Label Text="{Binding NumeroARecargar}" HorizontalTextAlignment="Center"   />
+                                        <Label Text="{Binding Monto}" HorizontalTextAlignment="Center"  Grid.Column="1" />
                                         <Label Text="{Binding Fecha}" HorizontalTextAlignment="Center"  Grid.Column="2" />
                                     </Grid>
                                 </ViewCell>

@@ -4,7 +4,12 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "ClaroNet.Android.dll" comes first in this list. */
 		"ClaroNet.Android.dll",
 		"ClaroNet.dll",
+		"CommonServiceLocator.dll",
 		"FormsViewGroup.dll",
+		"GalaSoft.MvvmLight.dll",
+		"GalaSoft.MvvmLight.Extras.dll",
+		"GalaSoft.MvvmLight.Platform.dll",
+		"Newtonsoft.Json.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",

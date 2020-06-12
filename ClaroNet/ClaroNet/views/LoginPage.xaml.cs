@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClaroNet.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,11 +16,6 @@ namespace ClaroNet.views
         public LoginPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            Application.Current.MainPage.Navigation.PushAsync(new PcrView());
         }
     }
 }

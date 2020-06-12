@@ -1,0 +1,51 @@
+C:\Repos\ApiConsumer\ApiConsumer\ApiConsumer\obj\Debug\ApiConsumer.csprojResolveAssemblyReference.cache
+C:\Repos\ApiConsumer\ApiConsumer\ApiConsumer\bin\Debug\ApiConsumer.dll.config
+C:\Repos\ApiConsumer\ApiConsumer\ApiConsumer\bin\Debug\ApiConsumer.dll
+C:\Repos\ApiConsumer\ApiConsumer\ApiConsumer\bin\Debug\ApiConsumer.pdb
+C:\Repos\ApiConsumer\ApiConsumer\ApiConsumer\bin\Debug\Newtonsoft.Json.dll
+C:\Repos\ApiConsumer\ApiConsumer\ApiConsumer\bin\Debug\System.Net.Http.dll
+C:\Repos\ApiConsumer\ApiConsumer\ApiConsumer\bin\Debug\System.Net.Http.Extensions.dll
+C:\Repos\ApiConsumer\ApiConsumer\ApiConsumer\bin\Debug\System.Net.Http.Formatting.dll
+C:\Repos\ApiConsumer\ApiConsumer\ApiConsumer\bin\Debug\System.Net.Http.Primitives.dll
+C:\Repos\ApiConsumer\ApiConsumer\ApiConsumer\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Repos\ApiConsumer\ApiConsumer\ApiConsumer\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Repos\ApiConsumer\ApiConsumer\ApiConsumer\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Repos\ApiConsumer\ApiConsumer\ApiConsumer\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Repos\ApiConsumer\ApiConsumer\ApiConsumer\bin\Debug\Newtonsoft.Json.xml
+C:\Repos\ApiConsumer\ApiConsumer\ApiConsumer\obj\Debug\ApiConsumer.dll
+C:\Repos\ApiConsumer\ApiConsumer\ApiConsumer\obj\Debug\ApiConsumer.pdb
+C:\Repos\ApiConsumer\ApiConsumer\ApiConsumer\bin\Debug\ApiConsumer.XML
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\ApiConsumer.dll.config
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\ApiConsumer.XML
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\ApiConsumer.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\ApiConsumer.pdb
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\Newtonsoft.Json.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\System.Net.Http.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\System.Net.Http.Extensions.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\System.Net.Http.Formatting.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\System.Net.Http.Primitives.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\Newtonsoft.Json.xml
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\obj\Debug\ApiConsumer.csprojResolveAssemblyReference.cache
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\obj\Debug\ApiConsumer.dll
+C:\Repos\ApiConsumer-4.6.1\ApiConsumer\obj\Debug\ApiConsumer.pdb
+C:\Users\A308610\Desktop\06-Pruebas Sistemas Embebidos\Solution1\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\ApiConsumer.dll.config
+C:\Users\A308610\Desktop\06-Pruebas Sistemas Embebidos\Solution1\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\ApiConsumer.XML
+C:\Users\A308610\Desktop\06-Pruebas Sistemas Embebidos\Solution1\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\ApiConsumer.dll
+C:\Users\A308610\Desktop\06-Pruebas Sistemas Embebidos\Solution1\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\ApiConsumer.pdb
+C:\Users\A308610\Desktop\06-Pruebas Sistemas Embebidos\Solution1\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\A308610\Desktop\06-Pruebas Sistemas Embebidos\Solution1\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\System.Net.Http.dll
+C:\Users\A308610\Desktop\06-Pruebas Sistemas Embebidos\Solution1\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\A308610\Desktop\06-Pruebas Sistemas Embebidos\Solution1\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\A308610\Desktop\06-Pruebas Sistemas Embebidos\Solution1\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\A308610\Desktop\06-Pruebas Sistemas Embebidos\Solution1\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\A308610\Desktop\06-Pruebas Sistemas Embebidos\Solution1\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\A308610\Desktop\06-Pruebas Sistemas Embebidos\Solution1\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\A308610\Desktop\06-Pruebas Sistemas Embebidos\Solution1\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\A308610\Desktop\06-Pruebas Sistemas Embebidos\Solution1\ApiConsumer-4.6.1\ApiConsumer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\A308610\Desktop\06-Pruebas Sistemas Embebidos\Solution1\ApiConsumer-4.6.1\ApiConsumer\obj\Debug\ApiConsumer.csproj.CopyComplete
+C:\Users\A308610\Desktop\06-Pruebas Sistemas Embebidos\Solution1\ApiConsumer-4.6.1\ApiConsumer\obj\Debug\ApiConsumer.dll
+C:\Users\A308610\Desktop\06-Pruebas Sistemas Embebidos\Solution1\ApiConsumer-4.6.1\ApiConsumer\obj\Debug\ApiConsumer.pdb

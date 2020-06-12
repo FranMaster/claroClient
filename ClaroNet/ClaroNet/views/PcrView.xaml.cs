@@ -18,32 +18,10 @@ namespace ClaroNet.views
         {
             InitializeComponent();
             BindingContext = this;
-            ListaRecientes = new ObservableCollection<Recargasrecientes>
-            {
-                new Recargasrecientes{Numero="xxxxxxx",Fecha=DateTime.Now.ToShortTimeString(),Valor="$20"},
-                new Recargasrecientes{Numero="xxxxxxx",Fecha=DateTime.Now.ToShortTimeString(),Valor="$30"},
-                new Recargasrecientes{Numero="xxxxxxx",Fecha=DateTime.Now.ToShortTimeString(),Valor="$45"},
-                new Recargasrecientes{Numero="xxxxxxx",Fecha=DateTime.Now.ToShortTimeString(),Valor="$45"},
-                new Recargasrecientes{Numero="xxxxxxx",Fecha=DateTime.Now.ToShortTimeString(),Valor="$45"},
-                new Recargasrecientes{Numero="xxxxxxx",Fecha=DateTime.Now.ToShortTimeString(),Valor="$45"},
-                new Recargasrecientes{Numero="xxxxxxx",Fecha=DateTime.Now.ToShortTimeString(),Valor="$45"},
-                new Recargasrecientes{Numero="xxxxxxx",Fecha=DateTime.Now.ToShortTimeString(),Valor="$45"},
-                new Recargasrecientes{Numero="xxxxxxx",Fecha=DateTime.Now.ToShortTimeString(),Valor="$45"},
-                new Recargasrecientes{Numero="xxxxxxx",Fecha=DateTime.Now.ToShortTimeString(),Valor="$56"}
-            };
+           
         }
 
-        private ObservableCollection<Recargasrecientes> _listaRecientes;
-
-        public ObservableCollection<Recargasrecientes> ListaRecientes
-        {
-            get { return _listaRecientes; }
-            set
-            {
-                _listaRecientes = value; OnPropertyChanged(nameof(ListaRecientes));
-            }
-        }
-
+     
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -62,14 +40,5 @@ namespace ClaroNet.views
             Application.Current.MainPage.Navigation.PushAsync(new RecargasView());
         }
     }
-    public class Recargasrecientes
-    {
-
-        public string Numero { get; set; }
-        public string Valor { get; set; }
-        public string Fecha { get; set; }
-
-
-
-    }
+   
 }
