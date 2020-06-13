@@ -1,5 +1,6 @@
 ﻿using ApiConsumer;
 using ClaroNet.Services.Response;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -12,7 +13,7 @@ namespace ClaroNet.Services
 
             string urlbase = "https://backendclaro.herokuapp.com";
             string route = "login";
-            var res = base.Post<LoginResponse>(urlbase, route, new { email = email.Trim(), password = pass.Trim() }, null, "application/x-www-form-urlenconded");
+            var res = base.Post<LoginResponse>(urlbase, route, new { email = email.Trim(), password = pass.Trim() });
             return res;
 
         }
@@ -27,7 +28,13 @@ namespace ClaroNet.Services
             return result;
         }
     
-    
+        public async Task<GenericResponse<RecargasResponse.RecargasResponse>> SaveRecargas(RecargasRquest.RecargasRequest datos)
+        {
+            string urlbase = "https://backendclaro.herokuapp.com";
+            string route = $"Recargas";
+            var respo=base.Post<RecargasResponse.RecargasResponse>(urlbase, route, datos);
+            return respo;
+        }
     
     }
 
@@ -91,15 +98,6 @@ namespace ClaroNet.Services.Response
 namespace ClaroNet.Services.RecargasResponse
 {
 
-    using Newtonsoft.Json;
-
-    using System;
-    using System.Collections.Generic;
-
-    using System.Globalization;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-
     public partial class RecargasResponse
     {
         [JsonProperty("mensagge")]
@@ -107,38 +105,88 @@ namespace ClaroNet.Services.RecargasResponse
 
         [JsonProperty("data")]
         public List<DatosRecargas> Data { get; set; }
+
+      
+
     }
 
     public partial class DatosRecargas
     {
-        [JsonProperty("nombreDelPunto")]
-        public string NombreDelPunto { get; set; }
+        [JsonProperty("pcr")]
+        public Pcr Pcr { get; set; }
 
-        [JsonProperty("NumeroARecargar")]
-        public string NumeroARecargar { get; set; }
-
-        [JsonProperty("monto")]
-        public long Monto { get; set; }
-
-        [JsonProperty("hora")]
-        public string Hora { get; set; }
+        [JsonProperty("data")]
+        public string Data { get; set; }
 
         [JsonProperty("fecha")]
         public string Fecha { get; set; }
 
-        [JsonProperty("ubicacion")]
-        public Ubicacion Ubicacion { get; set; }
+        public string MensajeTelefono
+        {
+            get
+            {
+                try
+                {
+                    string datosVisible = string.Empty;
+                    if (Data.Contains("fallo"))                    
+                        return Data?.Split('.')?[0];                    
+                    return Data?.Split('.')?[1];
+                }
+                catch (System.Exception)
+                { 
+                    return Data;
+                }
+               
+             
+            }
+
+        }
+       
+
     }
 
-    public partial class Ubicacion
+    public partial class Pcr
     {
-        [JsonProperty("lon")]
-        public double Lon { get; set; }
+        [JsonProperty("nombreDelPunto")]
+        public string NombreDelPunto { get; set; }
 
-        [JsonProperty("lat")]
-        public double Lat { get; set; }
+        [JsonProperty("direccion")]
+        public string Direccion { get; set; }
     }
+
+
 }
 
+namespace ClaroNet.Services.RecargasRquest
+{
+    using System;
+    using System.Collections.Generic;
 
+    using System.Globalization;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
+
+    public partial class RecargasRequest
+    {
+        [JsonProperty("pcr")]
+        public Pcr Pcr { get; set; }
+
+        [JsonProperty("data")]
+        public string Data { get; set; }
+
+        [JsonProperty("fecha")]
+        public string Fecha { get; set; }
+
+
+    }
+
+    public partial class Pcr
+    {
+        [JsonProperty("nombreDelPunto")]
+        public string NombreDelPunto { get; set; }
+
+        [JsonProperty("direccion")]
+        public string Direccion { get; set; }
+    }
+}
 

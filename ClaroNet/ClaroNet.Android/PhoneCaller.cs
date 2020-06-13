@@ -35,9 +35,8 @@ namespace ClaroNet.Droid
                 Android.App.Application.Context.StartActivity(intent);
 
             }
-            catch (System.Exception er)
+            catch (System.Exception )
             {
-
                 throw;
             }
         }

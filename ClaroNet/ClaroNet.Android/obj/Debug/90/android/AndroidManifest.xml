@@ -10,7 +10,17 @@
   <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
   <uses-permission android:name="android.permission.READ_PHONE_STATE" />
   <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+  <uses-permission android:name="android.permission.BROADCAST_SMS" />
+  <uses-permission android:name="android.permission.READ_SMS" />
+  <uses-permission android:name="android.permission.RECEIVE_SMS" />
+  <uses-permission android:name="android.permission.SEND_SMS" />
+  <uses-permission android:name="android.permission.WRITE_SMS" />
   <application android:label="ClaroNet.Android" android:usesCleartextTraffic="true" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true">
+    <receiver android:label="SMS Receiver" android:name="crc641e02d8169d1c98f7.SMSReceiver">
+      <intent-filter>
+        <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+      </intent-filter>
+    </receiver>
     <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="ClaroNet" android:theme="@style/MainTheme" android:name="crc64a5ece39d37f82282.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

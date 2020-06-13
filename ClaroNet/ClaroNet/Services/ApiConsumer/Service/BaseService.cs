@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 //using System.Net.Http.Formatting;
+using System.Text;
 
 namespace ApiConsumer
 {
@@ -164,6 +165,13 @@ namespace ApiConsumer
                             //                               BodyParameters,
                             //                               new JsonMediaTypeFormatter(),
                             //                               new MediaTypeHeaderValue("application/json"));
+
+
+                            var request = JsonConvert.SerializeObject(BodyParameters);
+                            theContent = new StringContent(
+                                                               request,
+                                                               Encoding.UTF8,
+                                                               "application/json");
                             break;
                     }
                 }

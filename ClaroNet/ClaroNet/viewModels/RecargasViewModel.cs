@@ -1,8 +1,10 @@
 ﻿using ClaroNet.Helpers;
 using ClaroNet.models;
+using ClaroNet.Services;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 
@@ -30,7 +32,11 @@ namespace ClaroNet.viewModels
 
         public RecargasViewModel()
         {
-
+            mensajeAnterior = string.Empty;
+            this.Subscribe<string>(Events.SmsRecieved, code =>
+            {
+                Notificacion(code);
+            });
         }
 
 
@@ -42,7 +48,7 @@ namespace ClaroNet.viewModels
             {
                 if (!string.IsNullOrEmpty(Telefono) && (!string.IsNullOrEmpty(Monto)))
                     DependencyService.Get<IServiceCaller>()
-                        .MakeCall(Telefono, Monto,Session.GetInstance().
+                        .MakeCall(Telefono, Monto, Session.GetInstance().
                         UsuarioLogueado
                         .Data
                         .Pcr
@@ -50,7 +56,7 @@ namespace ClaroNet.viewModels
                         .ToString());
                 else
                     await App.Current.MainPage.DisplayAlert("Error", $"Lene todos los campos", "Accept");
-                
+
             }
             catch (Exception ed)
             {
@@ -58,8 +64,32 @@ namespace ClaroNet.viewModels
 
             }
         }
+        public string mensajeAnterior { get; set; }
+        public async void Notificacion(string codigo)
+        {
+            if (mensajeAnterior.Equals(codigo))
+                 return;     
+            var mensajeDescompuesto = codigo.Split('\n');
+            if (mensajeDescompuesto.Count() <= 0 && !mensajeDescompuesto.First().Contains("RecargaCLR"))
+                return;
+                      
 
+            var resp= await new ClaroBackendService().SaveRecargas(new Services.RecargasRquest.RecargasRequest
+            {
+                Pcr=new Services.RecargasRquest.Pcr
+                {
+                    Direccion=Session.GetInstance().UsuarioLogueado.Data.Pcr.Direccion,
+                    NombreDelPunto= Session.GetInstance().UsuarioLogueado.Data.Pcr.NombreDelPunto
+                },
+                Data = codigo,
+                Fecha=DateTime.Now.ToShortTimeString()
+            });
+            if (resp.Success)
+            {
+                await App.Current.MainPage.DisplayAlert("Claro Mensaje", "Actualiza Recargas", "Accept");
+            }
+            mensajeAnterior = codigo;
 
-
+        }
     }
 }

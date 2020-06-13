@@ -42,6 +42,11 @@ namespace ClaroNet.viewModels
      		v.BindingContext = new PcrViewModel();
 			await Application.Current.MainPage.Navigation.PushAsync(v);
 	    }
+		public LoginViewModel()
+		{
+			Email = "enoc@gmail.com";
+			Password = "1234567";
+		}
 
 
 	}

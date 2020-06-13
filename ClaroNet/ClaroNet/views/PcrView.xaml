@@ -126,17 +126,12 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <Label Text="Numero" 
+                                <Label Text="Datos " 
                                        TextColor="Black"
                                        FontAttributes="Bold"
                                        HorizontalTextAlignment="Center"
                                         Margin="0,0,0,20"
-                                         />
-                                <Label Text="Valor" 
-                                       TextColor="Black"
-                                       FontAttributes="Bold"
-                                       Grid.Column="1" 
-                               HorizontalTextAlignment="Center"/>
+                                         />                                
                                 <Label Text="Fecha"
                                        FontAttributes="Bold"
                                        TextColor="Black" 
@@ -152,10 +147,8 @@
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition/>
                                             <ColumnDefinition/>
-                                            <ColumnDefinition/>
-                                        </Grid.ColumnDefinitions>
-                                        <Label Text="{Binding NumeroARecargar}" HorizontalTextAlignment="Center"   />
-                                        <Label Text="{Binding Monto}" HorizontalTextAlignment="Center"  Grid.Column="1" />
+                                          </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding MensajeTelefono}" HorizontalTextAlignment="Center"   />
                                         <Label Text="{Binding Fecha}" HorizontalTextAlignment="Center"  Grid.Column="2" />
                                     </Grid>
                                 </ViewCell>

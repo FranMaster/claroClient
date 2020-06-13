@@ -1,3 +1,6 @@
+BurgerSpot.Droid.SMSReceiver, ClaroNet.Android;crc641e02d8169d1c98f7.SMSReceiver
+BurgerSpot.Droid.SMSReceiver;crc641e02d8169d1c98f7.SMSReceiver
+burgerspot.droid.SMSReceiver;crc641e02d8169d1c98f7.SMSReceiver
 ClaroNet.Droid.MainActivity, ClaroNet.Android;crc64a5ece39d37f82282.MainActivity
 ClaroNet.Droid.MainActivity;crc64a5ece39d37f82282.MainActivity
 claronet.droid.MainActivity;crc64a5ece39d37f82282.MainActivity

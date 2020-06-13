@@ -7,9 +7,7 @@
              mc:Ignorable="d"
              x:Class="ClaroNet.views.RecargasView"
              NavigationPage.HasNavigationBar="False">
-    <ContentPage.BindingContext>
-        <vm:RecargasViewModel />
-    </ContentPage.BindingContext>
+
     <ContentPage.Content>
         <Grid>
             <!--header-->
