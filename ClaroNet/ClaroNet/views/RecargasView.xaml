@@ -19,7 +19,7 @@
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="End"
                              VerticalOptions="Center">
-                    <Label Text="Francisco Jimenez"
+                    <Label Text="{Binding NombreUsuario}"
                            TextColor="White"
                            VerticalTextAlignment="Center"
                            Margin="0,0,10,0"

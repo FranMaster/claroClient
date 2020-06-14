@@ -5841,6 +5841,9 @@ namespace ClaroNet.Droid
 			// aapt resource value: 0x7F070085
 			public const int userImg = 2131165317;
 			
+			// aapt resource value: 0x7F070086
+			public const int work = 2131165318;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

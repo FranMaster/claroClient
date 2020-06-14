@@ -17,6 +17,15 @@ namespace ClaroNet.viewModels
 		{
 			NombreUsuario = $"{Session.GetInstance().UsuarioLogueado.Data.Datosusuario.Nombre} {Session.GetInstance().UsuarioLogueado.Data.Datosusuario.Apellido}";
 			CargarRecargas();
+			Session.GetInstance().CambiosEnSaldo += PcrViewModel_CambiosEnSaldo;
+			VisibilidadSaldo = false;
+		}
+
+		private void PcrViewModel_CambiosEnSaldo(object sender, EventArgs e)
+		{
+			CargarRecargas();
+			SaldoActual = Session.GetInstance().SaldoActual;
+			VisibilidadSaldo = true;
 		}
 
 		private string nombreUsuario;
@@ -36,7 +45,6 @@ namespace ClaroNet.viewModels
 			set { _pcr = value; onPropetyChanged(nameof(Pcr)); }
 		}
 		private ObservableCollection<DatosRecargas> _listaRecientes;
-
 		public ObservableCollection<DatosRecargas> ListaRecientes
 		{
 			get { return _listaRecientes; }
@@ -45,7 +53,23 @@ namespace ClaroNet.viewModels
 				_listaRecientes = value; onPropetyChanged(nameof(ListaRecientes));
 			}
 		}
-			   		 
+		private bool _VisibilidadSaldo;
+
+		public bool VisibilidadSaldo
+		{
+			get { return _VisibilidadSaldo; }
+			set { _VisibilidadSaldo = value;onPropetyChanged(nameof(VisibilidadSaldo)); }
+		}
+
+
+		private string saldoActual;
+
+		public string SaldoActual
+		{
+			get { return saldoActual; }
+			set { saldoActual = value; onPropetyChanged(nameof(SaldoActual)); }
+		}
+		
 		public RelayCommand NuevaRecarga => new RelayCommand(btnNuevaRecarga);
 		public RelayCommand stats => new RelayCommand(btnStats);
 		public RelayCommand salir => new RelayCommand(btnSalir);
@@ -57,13 +81,14 @@ namespace ClaroNet.viewModels
 			vw.BindingContext = new RecargasViewModel();
 			await Application.Current.MainPage.Navigation.PushAsync(vw);
 		}
-		private void btnStats()
+		private async void btnStats()
 		{
-
+			HistorialView vw = new HistorialView();
+			await Application.Current.MainPage.Navigation.PushAsync(vw);
 		}
-		private void btnSalir()
+		private async void btnSalir()
 		{
-
+			
 		}
 
 		public async void CargarRecargas()
@@ -74,7 +99,8 @@ namespace ClaroNet.viewModels
 				.UsuarioLogueado.Data.Pcr);
 			if (!resp.Success)
 				return;
-			ListaRecientes = new ObservableCollection<DatosRecargas>( resp.ObjectData.Data);
+		     resp.ObjectData.Data.Reverse();
+			ListaRecientes = new ObservableCollection<DatosRecargas>(resp.ObjectData.Data);
 
 		}
 	}

@@ -4,12 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ClaroNet.views.HistorialView">
+             x:Class="ClaroNet.views.HistorialView"
+               Title="Modulo en Construcción"   >
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid BackgroundColor="#c0d1db" >
+            <Image Source="work" Aspect="AspectFit" />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

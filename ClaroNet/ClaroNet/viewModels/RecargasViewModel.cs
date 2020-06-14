@@ -12,6 +12,18 @@ namespace ClaroNet.viewModels
 {
     public class RecargasViewModel : BaseViewModel
     {
+
+        private string nombreUsuario;
+        public string NombreUsuario
+        {
+            get { return nombreUsuario; }
+            set
+            {
+                nombreUsuario = value;
+                onPropetyChanged(nameof(NombreUsuario));
+            }
+        }
+
         private string _telefono;
 
         public string Telefono
@@ -37,6 +49,7 @@ namespace ClaroNet.viewModels
             {
                 Notificacion(code);
             });
+            NombreUsuario = $"{Session.GetInstance().UsuarioLogueado.Data.Datosusuario.Nombre} {Session.GetInstance().UsuarioLogueado.Data.Datosusuario.Apellido}";
         }
 
 
@@ -68,7 +81,11 @@ namespace ClaroNet.viewModels
         public async void Notificacion(string codigo)
         {
             if (mensajeAnterior.Equals(codigo))
-                 return;     
+            {
+                mensajeAnterior = string.Empty;
+                return;
+            }
+                 
             var mensajeDescompuesto = codigo.Split('\n');
             if (mensajeDescompuesto.Count() <= 0 && !mensajeDescompuesto.First().Contains("RecargaCLR"))
                 return;
@@ -89,6 +106,12 @@ namespace ClaroNet.viewModels
                 await App.Current.MainPage.DisplayAlert("Claro Mensaje", "Actualiza Recargas", "Accept");
             }
             mensajeAnterior = codigo;
+
+            var MensajedeSaldo=mensajeDescompuesto[1].Split('.');
+
+            var NuevoSaldo = MensajedeSaldo[2].Split(' ');
+            Session.GetInstance().Saldo = NuevoSaldo.Last();
+            Session.GetInstance().CambioRealizado();
 
         }
     }

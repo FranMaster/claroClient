@@ -7,9 +7,6 @@
              x:Class="ClaroNet.views.PcrView"
              xmlns:vm="clr-namespace:ClaroNet.viewModels"
              NavigationPage.HasNavigationBar="False">
-    <ContentPage.BindingContext>
-        <vm:PcrViewModel />
-    </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid>
             <!--header-->
@@ -35,11 +32,12 @@
             </Grid>
             <Grid Margin="0,100,0,0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="0.3*"/>
-                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="0.3*" />
+                    <RowDefinition Height="0.5*" />
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <StackLayout Grid.Row="0" Orientation="Horizontal">
+                <StackLayout Grid.Row="0" Orientation="Horizontal" 
+                             IsVisible="{Binding VisibilidadSaldo}">
                     <Label HorizontalOptions="Center"
                            Text="Saldo para Cargas:" 
                            TextColor="Red"
@@ -59,9 +57,9 @@
                                       VerticalOptions="Center" 
                                       VerticalTextAlignment="Center"
                                       Margin="20"
-                                      Text="$ 500"
+                                      Text="{Binding SaldoActual,Mode=TwoWay}"
                                       TextColor="White"
-                                      WidthRequest="300"
+                                      WidthRequest="200"
                                       FontSize="Medium">
                             </Label>
                         </StackLayout>
@@ -88,8 +86,9 @@
                     <StackLayout Margin="0,0,30,0">
                         <ImageButton Source="stats" 
                                  BackgroundColor="Transparent"
+                                     Command="{Binding stats}"
                                  HeightRequest="80"/>
-                        <Label Text="stats" HorizontalTextAlignment="Center"/>
+                        <Label Text="Historial" HorizontalTextAlignment="Center"/>
                     </StackLayout>
                     <StackLayout>
                         <ImageButton Source="exit" 

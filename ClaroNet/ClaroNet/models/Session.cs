@@ -16,5 +16,16 @@ namespace ClaroNet.models
 
         public LoginResponse UsuarioLogueado { get; set; }
 
-	}
+        public string Saldo { get; set; }
+
+        public string SaldoActual => $" $ {Saldo}";
+
+        public event EventHandler CambiosEnSaldo;
+
+        public void CambioRealizado()
+        {
+            CambiosEnSaldo?.Invoke(this,new EventArgs());
+        }
+
+    }
 }
