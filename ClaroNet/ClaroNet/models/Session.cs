@@ -27,5 +27,10 @@ namespace ClaroNet.models
             CambiosEnSaldo?.Invoke(this,new EventArgs());
         }
 
+        public void Logout()
+        {
+            instance = null;
+        }
+
     }
 }

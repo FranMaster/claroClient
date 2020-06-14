@@ -32,12 +32,12 @@
             </Grid>
             <Grid Margin="0,100,0,0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="0.3*" />
+                    <RowDefinition Height="auto" />
                     <RowDefinition Height="0.5*" />
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <StackLayout Grid.Row="0" Orientation="Horizontal" 
-                             IsVisible="{Binding VisibilidadSaldo}">
+                                 IsVisible="{Binding VisibilidadSaldo}">
                     <Label HorizontalOptions="Center"
                            Text="Saldo para Cargas:" 
                            TextColor="Red"
@@ -55,11 +55,11 @@
                                       HorizontalOptions="Center"
                                       HorizontalTextAlignment="Center"
                                       VerticalOptions="Center" 
-                                      VerticalTextAlignment="Center"
-                                      Margin="20"
+                                      VerticalTextAlignment="Center"                                   
                                       Text="{Binding SaldoActual,Mode=TwoWay}"
                                       TextColor="White"
                                       WidthRequest="200"
+                                     HeightRequest="40"
                                       FontSize="Medium">
                             </Label>
                         </StackLayout>
@@ -68,8 +68,7 @@
                 <Grid Grid.Row="1">
                     <Label Text="Opciones:" 
                            TextColor="Red"
-                           FontAttributes="Bold"
-                           
+                           FontAttributes="Bold"                           
                            Margin="20,0,0,20"/>
                 </Grid>
                 <StackLayout Grid.Row="1" Orientation="Horizontal"
@@ -101,7 +100,7 @@
                 <BoxView BackgroundColor="Red"
                          VerticalOptions="End"
                          HorizontalOptions="FillAndExpand"
-                         Margin="10"
+                         Margin="10,50,10,0"                         
                          HeightRequest="1"/>
                 <BoxView Grid.Row="1" BackgroundColor="Red"
                          VerticalOptions="End"

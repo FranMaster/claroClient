@@ -4,21 +4,42 @@ using ClaroNet.Services.RecargasResponse;
 using ClaroNet.views;
 using GalaSoft.MvvmLight.Command;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace ClaroNet.viewModels
 {
-    public class PcrViewModel:BaseViewModel
-    {
+	public class PcrViewModel : BaseViewModel
+	{
 		public PcrViewModel()
 		{
 			NombreUsuario = $"{Session.GetInstance().UsuarioLogueado.Data.Datosusuario.Nombre} {Session.GetInstance().UsuarioLogueado.Data.Datosusuario.Apellido}";
 			CargarRecargas();
 			Session.GetInstance().CambiosEnSaldo += PcrViewModel_CambiosEnSaldo;
 			VisibilidadSaldo = false;
+			CargarSaldo();
+
+
+		}
+
+
+		public void CargarSaldo()
+		{
+
+			if (ListaRecientes != null && ListaRecientes.Count > 0)
+			{
+				var a = ListaRecientes.First().Data;
+				var mensajeDescompuesto = a.Split('\n');
+				if (mensajeDescompuesto.Count() <= 0 && !mensajeDescompuesto.First().Contains("RecargaCLR"))
+					return;
+				var MensajedeSaldo = mensajeDescompuesto[1].Split('.');
+				var e = MensajedeSaldo[2].Split(' ');
+				SaldoActual = $" $ {e.Last()}";
+				VisibilidadSaldo = true;
+
+			}
+		
 		}
 
 		private void PcrViewModel_CambiosEnSaldo(object sender, EventArgs e)
@@ -34,7 +55,7 @@ namespace ClaroNet.viewModels
 			get { return nombreUsuario; }
 			set
 			{
-				nombreUsuario = value; 
+				nombreUsuario = value;
 				onPropetyChanged(nameof(NombreUsuario));
 			}
 		}
@@ -58,7 +79,7 @@ namespace ClaroNet.viewModels
 		public bool VisibilidadSaldo
 		{
 			get { return _VisibilidadSaldo; }
-			set { _VisibilidadSaldo = value;onPropetyChanged(nameof(VisibilidadSaldo)); }
+			set { _VisibilidadSaldo = value; onPropetyChanged(nameof(VisibilidadSaldo)); }
 		}
 
 
@@ -69,7 +90,7 @@ namespace ClaroNet.viewModels
 			get { return saldoActual; }
 			set { saldoActual = value; onPropetyChanged(nameof(SaldoActual)); }
 		}
-		
+
 		public RelayCommand NuevaRecarga => new RelayCommand(btnNuevaRecarga);
 		public RelayCommand stats => new RelayCommand(btnStats);
 		public RelayCommand salir => new RelayCommand(btnSalir);
@@ -88,18 +109,20 @@ namespace ClaroNet.viewModels
 		}
 		private async void btnSalir()
 		{
-			
+			LoginPage vw = new LoginPage();
+			Session.GetInstance().Logout();
+			await Application.Current.MainPage.Navigation.PushAsync(vw);
 		}
 
 		public async void CargarRecargas()
 		{
-		  var resp=	await new ClaroBackendService()
-				.getRecargas(
-				 Session.GetInstance()
-				.UsuarioLogueado.Data.Pcr);
+			var resp = await new ClaroBackendService()
+				  .getRecargas(
+				   Session.GetInstance()
+				  .UsuarioLogueado.Data.Pcr);
 			if (!resp.Success)
 				return;
-		     resp.ObjectData.Data.Reverse();
+			resp.ObjectData.Data.Reverse();
 			ListaRecientes = new ObservableCollection<DatosRecargas>(resp.ObjectData.Data);
 
 		}
