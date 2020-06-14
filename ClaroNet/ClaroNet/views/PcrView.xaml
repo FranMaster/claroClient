@@ -93,6 +93,7 @@
                         <ImageButton Source="exit" 
                                  BackgroundColor="Transparent"
                                  HeightRequest="80"
+                                 Command="{Binding salir}"
                            />
                         <Label Text="salir" HorizontalTextAlignment="Center"/>
                     </StackLayout>
