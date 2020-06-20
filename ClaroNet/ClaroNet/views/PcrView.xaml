@@ -110,10 +110,22 @@
             </Grid>
             <!--Grilla de Datos-->
             <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" >
+                    <Label Text="Recargas Recientes:" 
+                   FontAttributes="Bold"  
+                   TextColor="Red"
+                   FontSize="Large"
+                   Margin="10,0,0,0"/>
+                </Grid>
                 <ListView  ItemsSource="{Binding ListaRecientes}"                          
                           HorizontalOptions="Center"
                           HasUnevenRows="True"
-                          Margin="20,25,20,20">
+                          Margin="20,25,20,20"
+                          Grid.Row="0">
                     <ListView.Header>
                         <Grid Margin="0,20,0,0" >
                             <Grid.ColumnDefinitions>
@@ -151,13 +163,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </Grid>
-            <Grid Grid.Row="3" >
-                <Label Text="Recargas Recientes:" 
-                   FontAttributes="Bold"  
-                   TextColor="Red"
-                   FontSize="Large"
-                   Margin="10,0,0,0"/>
-            </Grid>
+
             <Grid Grid.Row="4">
                 <Grid VerticalOptions="End" 
                   HorizontalOptions="Center"
