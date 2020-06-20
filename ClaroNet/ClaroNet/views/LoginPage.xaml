@@ -12,67 +12,58 @@
         <vm:LoginViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        
-        <StackLayout >
+
+        <Grid>
             <Grid>
-                <Image Source="logoRojo" 
-                       VerticalOptions="Start"
-                       HorizontalOptions="Center"
-                       HeightRequest="75"
-                       Margin="0,240,0,0"
-                       />
-                <Image Source="loginUser" 
-                       VerticalOptions="Start"
-                       HorizontalOptions="Center"
-                       HeightRequest="100"
-                       Margin="0,130,0,0"
-                       />
-                
-                <StackLayout Padding="0" Margin="20,200,20,0" HorizontalOptions="FillAndExpand"
-                             VerticalOptions="Center">
-                    <Frame  BackgroundColor="Transparent" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.2*" />
+                    <RowDefinition/>
+                    <RowDefinition Height="0.2*"/>
+                </Grid.RowDefinitions>
 
-                        <StackLayout>          
-                            <StackLayout Padding="0" Margin="30,150">
-
-                                <Frame BackgroundColor="White"  Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
-                                    <StackLayout Orientation="Horizontal">
-                                        <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
-                                            <Image Source="userImg" Aspect="AspectFill" Margin="0"/>
-                                        </Frame>
-
-                                        <Entry x:Name="Email" Placeholder="Email" Text="{Binding Email}" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
-                                    </StackLayout>
-                                </Frame>
-
-                                <Frame BackgroundColor="White"  Margin="0,40,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
-                                    <StackLayout Orientation="Horizontal">
-                                        <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
-                                            <Image Source="lock" Aspect="Fill" Margin="0"/>
-                                        </Frame>
-                                        <Entry Placeholder="Password" x:Name="Pass" Text="{Binding Password}" IsPassword="True" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
-                                    </StackLayout>
-                                </Frame>
-
-                                <StackLayout  Orientation="Horizontal"  Margin="0,40,0,0">
-                                    <Switch IsToggled="False"  OnColor="Red" HeightRequest="30"/>
-                                    <Label Text="Remember me" TextColor="#545454" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
-                                    <Label Text="forgot password" TextColor="Black" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                <Grid BackgroundColor="Transparent"/>
+                <Grid Grid.Row="1" BackgroundColor="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Frame Grid.Column="1" VerticalOptions="CenterAndExpand" CornerRadius="20"
+                       Opacity="0.8">
+                        <StackLayout >
+                            <Image Source="loginuser" MinimumWidthRequest="70" HeightRequest="120"/>
+                            <Frame CornerRadius="15"  Margin="0,0,0,10"  Padding="5" >
+                                <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="FillAndExpand">
+                                    <Image HeightRequest="40" WidthRequest="40"
+                                       Source="userImg"/>
+                                    <Entry HorizontalOptions="FillAndExpand"
+                                       Placeholder="Email" Text="{Binding Email}"/>
                                 </StackLayout>
-                                <Button Text="Ingresar"
-                                        Margin="0,20,0,0" 
-                                        BackgroundColor="#f62323"
-                                        TextColor="White"
-                                        CornerRadius="30" 
-                                       Command="{Binding btnLogin}"/>                                                            
-
-                            </StackLayout>
+                            </Frame>
+                            <Frame CornerRadius="15" Margin="0,0,0,10"  Padding="5">
+                                <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="FillAndExpand">
+                                    <Image HeightRequest="40" WidthRequest="40"
+                                       Source="lock"
+                                       />
+                                    <Entry HorizontalOptions="FillAndExpand"
+                                       IsPassword="True" Placeholder="Password"
+                                       HorizontalTextAlignment="Start" Text="{Binding Password}"/>
+                                </StackLayout>
+                            </Frame>
+                            <Button Text="Entrar" CornerRadius="15" BackgroundColor="red"
+                            TextColor="White" FontSize="Large" FontAttributes="Bold"
+                                    Command="{Binding btnLogin}"/>
                         </StackLayout>
-
                     </Frame>
-                </StackLayout>
+
+                </Grid>
+                <Grid Grid.Row="2" BackgroundColor="Transparent"/>
+
+
             </Grid>
-        </StackLayout>
+        </Grid>
 
     </ContentPage.Content>
 </ContentPage>
