@@ -10,88 +10,76 @@
 
     <ContentPage.Content>
         <Grid>
-            <!--header-->
-            <Grid BackgroundColor="Red" VerticalOptions="Start"
-                  Padding="15">
-                <Image Source="logoBlanco" HorizontalOptions="Start"
-                       VerticalOptions="Center"
-                       WidthRequest="100"/>
-                <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="End"
-                             VerticalOptions="Center">
-                    <Label Text="{Binding NombreUsuario}"
-                           TextColor="White"
-                           VerticalTextAlignment="Center"
-                           Margin="0,0,10,0"
-                           FontAttributes="Bold"/>
-                    <Image Source="loginUser"                                          
-                       HeightRequest="45"
-                           VerticalOptions="Start"
-                       
-                       />
-                </StackLayout>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--Cabecera-->
+            <Grid BackgroundColor="Red">
+                <Image Source="logoBlanco" 
+                   HeightRequest="40"
+                   Margin="10,0,0,0"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start" />
+                <Label Text="{Binding NombreUsuario}" HorizontalOptions="End"
+                   VerticalOptions="Center" TextColor="White"
+                   FontAttributes="Bold" Margin="0,0,30,0" FontSize="Large"/>
             </Grid>
+            <Grid Grid.Row="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.2*" />
+                        <RowDefinition/>
+                        <RowDefinition Height="0.2*"/>
+                    </Grid.RowDefinitions>
 
-            <Image Source="cuatrog" VerticalOptions="Start"
-                   HorizontalOptions="Center"
-                   HeightRequest="200"
-                   Margin="0 ,200,0,0"/>
-            <StackLayout Padding="0" Margin="20,200,20,0" HorizontalOptions="FillAndExpand"
-                             VerticalOptions="Center">
-                <Frame  BackgroundColor="Transparent" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
+                    <Grid BackgroundColor="Transparent"/>
+                    <Grid Grid.Row="1" BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
 
-                    <StackLayout>
-                        <StackLayout Padding="0" Margin="30,150">
-
-                            <Frame BackgroundColor="White"  Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
-                                <StackLayout Orientation="Horizontal">
-                                    <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
-                                        <Image Source="telephone" Aspect="AspectFill" Margin="0"/>
-                                    </Frame>
-
-                                    <Entry Placeholder="Ingresa Número" Text="{Binding Telefono}" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
-                                </StackLayout>
-                            </Frame>
-
-                            <Frame BackgroundColor="White"  Margin="0,40,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
-                                <StackLayout Orientation="Horizontal">
-                                    <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
-                                        <Image Source="moneda" Aspect="Fill" Margin="0"/>
-                                    </Frame>
-                                    <Entry Placeholder="Ingresa Monto" IsPassword="True" Text="{Binding Monto}" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
-                                </StackLayout>
-                            </Frame>
-
-                           
-                            <Button Text="Recargar Linea Claro"
-                                        Margin="0,50,0,0" 
-                                        BackgroundColor="#f62323"
-                                        TextColor="White"
-                                        CornerRadius="30" 
-                                        Command="{Binding btnRecargar}"
-                                        />
-                            
-                            <StackLayout  Orientation="Vertical"
-                                          Margin="0,40,0,0">
-                              
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="aro"
-                                           HeightRequest="50"/>
-                                    <Button Text="Ingresar al portar claro" 
-                                        TextColor="Black" 
-                                        BackgroundColor="Transparent"                                  
-                                        HorizontalOptions="Center"
-                                           
-                                        />                                  
-                                </StackLayout>                               
-                               
+                        <Frame Grid.Column="1" VerticalOptions="CenterAndExpand" CornerRadius="20"
+                       Opacity="0.8">
+                            <StackLayout >
+                                <Image Source="cuatrog" MinimumWidthRequest="70" HeightRequest="120"/>
+                                <Frame CornerRadius="15"  Margin="0,0,0,10"  Padding="5" >
+                                    <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="FillAndExpand">
+                                        <Image HeightRequest="40" WidthRequest="40"
+                                       Source="telephone"/>
+                                        <Entry HorizontalOptions="FillAndExpand"
+                                       Placeholder="Telefono" 
+                                           Keyboard="Telephone"
+                                           Text="{Binding Telefono}"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame CornerRadius="15" Margin="0,0,0,10"  Padding="5">
+                                    <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="FillAndExpand">
+                                        <Image HeightRequest="40" WidthRequest="40"
+                                       Source="moneda"
+                                       />
+                                        <Entry HorizontalOptions="FillAndExpand"
+                                        Placeholder="Monto"
+                                        Keyboard="Numeric"
+                                        HorizontalTextAlignment="Start" Text="{Binding Monto}"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Button Text="Realiza Carga" CornerRadius="15" BackgroundColor="red"
+                            TextColor="White" FontSize="Large" FontAttributes="Bold"
+                                    Command="{Binding btnRecargar}"/>
                             </StackLayout>
+                        </Frame>
 
-                        </StackLayout>
-                    </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="2" BackgroundColor="Transparent"/>
 
-                </Frame>
-            </StackLayout>
+
+                </Grid>
+            </Grid>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
