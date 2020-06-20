@@ -9,161 +9,163 @@
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <Grid>
-            <!--header-->
-            <Grid BackgroundColor="Red" VerticalOptions="Start"
-                  Padding="15">
-                <Image Source="logoBlanco" HorizontalOptions="Start"
-                       VerticalOptions="Center"
-                       WidthRequest="100"/>
-                <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="End"
-                             VerticalOptions="Center">
-                    <Label Text="{Binding NombreUsuario}"
-                           TextColor="White"
-                           VerticalTextAlignment="Center"
-                           Margin="0,0,10,0"
-                           FontAttributes="Bold"/>
-                    <Image Source="loginUser"                                          
-                       HeightRequest="45"
-                           VerticalOptions="Start"
-                       
-                       />
-                </StackLayout>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!--Cabecera-->
+            <Grid BackgroundColor="Red">
+                <Image Source="logoBlanco" 
+                   HeightRequest="40"
+                   Margin="10,0,0,0"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start" />
+                <Label Text="{Binding NombreUsuario}" HorizontalOptions="End"
+                   VerticalOptions="Center" TextColor="White"
+                   FontAttributes="Bold" Margin="0,0,30,0" FontSize="Large"/>
             </Grid>
-            <Grid Margin="0,100,0,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="0.5*" />
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <StackLayout Grid.Row="0" Orientation="Horizontal" 
-                                 IsVisible="{Binding VisibilidadSaldo}">
-                    <Label HorizontalOptions="Center"
+            <!--Saldo-->
+            <Grid  Grid.Row="1" IsVisible="{Binding VisibilidadSaldo}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" HorizontalOptions="Center"
                            Text="Saldo para Cargas:" 
                            TextColor="Red"
                            FontAttributes="Bold"
-                           VerticalTextAlignment="Start"
-                           Padding="15"/>                    
-                    <Frame BackgroundColor="Red" 
+                           VerticalTextAlignment="Center"
+                          FontSize="Large"
+                           />
+                <Frame BackgroundColor="Red" 
                            HorizontalOptions="Center" 
-                           VerticalOptions="Start"                           
-                           Padding="0"
-                           Margin="0,0,10,0"
+                           VerticalOptions="Center"                           
+                            Grid.Column="1"                          
                            CornerRadius="10">
-                        <StackLayout Orientation="Horizontal">
-                            <Label   FontAttributes="None"
-                                      HorizontalOptions="Center"
+
+                    <Label   FontAttributes="None"
+                                      HorizontalOptions="Start"
                                       HorizontalTextAlignment="Center"
                                       VerticalOptions="Center" 
                                       VerticalTextAlignment="Center"                                   
                                       Text="{Binding SaldoActual,Mode=TwoWay}"
-                                      TextColor="White"
-                                      WidthRequest="200"
-                                     HeightRequest="40"
-                                      FontSize="Medium">
-                            </Label>
-                        </StackLayout>
-                    </Frame>
-                </StackLayout>
-                <Grid Grid.Row="1">
-                    <Label Text="Opciones:" 
-                           TextColor="Red"
-                           FontAttributes="Bold"                           
-                           Margin="20,0,0,20"/>
-                </Grid>
-                <StackLayout Grid.Row="1" Orientation="Horizontal"
-                             HorizontalOptions="Center"
-                             VerticalOptions="Center">                 
-                    <StackLayout Margin="0,0,30,0">
-                        <ImageButton Source="plus" 
-                                 BackgroundColor="Transparent"
-                                Command="{Binding NuevaRecarga}"
-                                 HeightRequest="80"/>
-                        <Label Text="Recargar" HorizontalTextAlignment="Center"/>
-                    </StackLayout>
+                                      TextColor="White"  
+                                      WidthRequest="100"
+                                      FontSize="Title">
+                    </Label>
 
-                    <StackLayout Margin="0,0,30,0">
-                        <ImageButton Source="stats" 
-                                 BackgroundColor="Transparent"
-                                     Command="{Binding stats}"
-                                 HeightRequest="80"/>
-                        <Label Text="Historial" HorizontalTextAlignment="Center"/>
+                </Frame>
+            </Grid>
+            <!--Botones-->
+            <Grid  Grid.Row="2" VerticalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="0.2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Text="Opciones:" 
+                   FontAttributes="Bold"  
+                   TextColor="Red"
+                   Margin="10,0,0,0"
+                   FontSize="Large" Grid.Row="0"
+                       HorizontalOptions="Start"
+                       HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="Start"
+                  Grid.ColumnSpan="4"/>
+                <Grid Grid.Column="1" Grid.Row="1">
+                    <StackLayout >
+                        <ImageButton
+                           HeightRequest="65"  
+                            WidthRequest="65"                           
+                           Source="plus"
+                        Command="{Binding NuevaRecarga}"/>
+                        <Label Text="Recargas"
+                           HorizontalTextAlignment="Center"/>
                     </StackLayout>
-                    <StackLayout>
-                        <ImageButton Source="exit" 
-                                 BackgroundColor="Transparent"
-                                 HeightRequest="80"
-                                 Command="{Binding salir}"
-                           />
-                        <Label Text="salir" HorizontalTextAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Column="2" Grid.Row="1">
+                    <StackLayout >
+                        <ImageButton Source="stats" HeightRequest="65"
+                                 Command="{Binding stats}"/>
+                        <Label Text="Historial"
+                           HorizontalTextAlignment="Center"/>
                     </StackLayout>
-                </StackLayout>
-                <BoxView BackgroundColor="Red"
-                         VerticalOptions="End"
-                         HorizontalOptions="FillAndExpand"
-                         Margin="10,50,10,0"                         
-                         HeightRequest="1"/>
-                <BoxView Grid.Row="1" BackgroundColor="Red"
-                         VerticalOptions="End"
-                         HorizontalOptions="FillAndExpand"
-                         Margin="10"
-                         HeightRequest="1"/>
-                <Grid  Grid.Row="2" Margin="0,0,0,20">
-                    <Label Text="Recargas Recientes:" 
-                           TextColor="Red"
-                           FontAttributes="Bold"
-                           VerticalTextAlignment="Start"
-                           Margin="20,0,0,20"/>
-                    <ListView  ItemsSource="{Binding ListaRecientes}"                          
+                </Grid>
+                <Grid Grid.Column="3" Grid.Row="1">
+                    <StackLayout >
+                        <ImageButton Source="exit" HeightRequest="65"
+                                 Command="{Binding salir}"/>
+                        <Label Text="Salir"
+                           HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                </Grid>
+            </Grid>
+            <!--Grilla de Datos-->
+            <Grid Grid.Row="3">
+                <ListView  ItemsSource="{Binding ListaRecientes}"                          
                           HorizontalOptions="Center"
                           HasUnevenRows="True"
                           Margin="20,25,20,20">
-                        <ListView.Header>
-                            <Grid Margin="0,20,0,0" >
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Label Text="Datos " 
+                    <ListView.Header>
+                        <Grid Margin="0,20,0,0" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Datos " 
                                        TextColor="Black"
                                        FontAttributes="Bold"
                                        HorizontalTextAlignment="Center"
                                         Margin="0,0,0,20"
-                                         />                                
-                                <Label Text="Fecha"
+                                         />
+                            <Label Text="Fecha"
                                        FontAttributes="Bold"
                                        TextColor="Black" 
                                        Grid.Column="2" 
                                HorizontalTextAlignment="Center"
                                Margin="0,0,0,20"/>
-                            </Grid>
-                        </ListView.Header>
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <Grid Padding="5">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition/>
-                                            <ColumnDefinition/>
-                                          </Grid.ColumnDefinitions>
-                                        <Label Text="{Binding MensajeTelefono}" HorizontalTextAlignment="Center"   />
-                                        <Label Text="{Binding Fecha}" HorizontalTextAlignment="Center"  Grid.Column="2" />
-                                    </Grid>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </Grid >                
+                        </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding MensajeTelefono}" HorizontalTextAlignment="Center"   />
+                                    <Label Text="{Binding Fecha}" HorizontalTextAlignment="Center"  Grid.Column="2" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Grid>
-            <Grid VerticalOptions="End" 
+            <Grid Grid.Row="3" >
+                <Label Text="Recargas Recientes:" 
+                   FontAttributes="Bold"  
+                   TextColor="Red"
+                   FontSize="Large"
+                   Margin="10,0,0,0"/>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid VerticalOptions="End" 
                   HorizontalOptions="Center"
                   Margin="0,0,0,10">
-                <Label Text="Versión 1.0"
+                    <Label Text="Versión 1.0"
                        />
+                </Grid>
             </Grid>
-           
-            
         </Grid>
     </ContentPage.Content>
 </ContentPage>
