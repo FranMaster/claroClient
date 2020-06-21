@@ -28,21 +28,20 @@
             <Grid Grid.Row="1">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="0.2*" />
+                        <RowDefinition Height="0.1*" />
                         <RowDefinition/>
-                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition Height="0.1*"/>
                     </Grid.RowDefinitions>
 
                     <Grid BackgroundColor="Transparent"/>
                     <Grid Grid.Row="1" BackgroundColor="Transparent">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
-                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="8*"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
 
-                        <Frame Grid.Column="1" VerticalOptions="CenterAndExpand" CornerRadius="20"
-                       Opacity="0.8">
+                        <Frame Grid.Column="1" VerticalOptions="CenterAndExpand" CornerRadius="20">
                             <StackLayout >
                                 <Image Source="cuatrog" MinimumWidthRequest="70" HeightRequest="75"/>
                                 <Frame CornerRadius="15"  Margin="0,0,0,10"  Padding="5" >
@@ -69,7 +68,7 @@
                                     </StackLayout>
                                 </Frame>
                                 <Button Text="Realiza Carga" CornerRadius="15" BackgroundColor="red"
-                            TextColor="White" FontSize="Large" FontAttributes="Bold"
+                            TextColor="White" FontSize="Medium" FontAttributes="Bold"
                                     Command="{Binding btnRecargar}"/>
                             </StackLayout>
                         </Frame>

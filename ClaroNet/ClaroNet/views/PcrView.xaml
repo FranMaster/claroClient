@@ -10,10 +10,11 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.2*"/>
-                <RowDefinition Height="0.2*"/>
-                <RowDefinition Height="0.6*"/>
-                <RowDefinition/>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition  Height="0.4*"/>
+                <RowDefinition Height="*" />
+                <RowDefinition  Height="auto"/>
             </Grid.RowDefinitions>
             <!--Cabecera-->
             <Grid BackgroundColor="Red">
@@ -37,7 +38,7 @@
                            TextColor="Red"
                            FontAttributes="Bold"
                            VerticalTextAlignment="Center"
-                          FontSize="Large"
+                          FontSize="Medium"
                            />
                 <Frame BackgroundColor="Red" 
                            HorizontalOptions="Center" 
@@ -51,9 +52,8 @@
                                       VerticalOptions="Center" 
                                       VerticalTextAlignment="Center"                                   
                                       Text="{Binding SaldoActual,Mode=TwoWay}"
-                                      TextColor="White"  
-                                      WidthRequest="100"
-                                      FontSize="Title">
+                                      TextColor="White"                                       
+                                      FontSize="Medium">
                     </Label>
 
                 </Frame>
@@ -62,9 +62,9 @@
             <Grid  Grid.Row="2" VerticalOptions="CenterAndExpand">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.2*"/>
+                    <ColumnDefinition />
                     <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="0.2*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -82,7 +82,7 @@
                   Grid.ColumnSpan="4"/>
                 <Grid Grid.Column="1" Grid.Row="1">
                     <StackLayout >
-                        <ImageButton
+                        <ImageButton BackgroundColor="Transparent"
                            HeightRequest="65"  
                             WidthRequest="65"                           
                            Source="plus"
@@ -93,7 +93,7 @@
                 </Grid>
                 <Grid Grid.Column="2" Grid.Row="1">
                     <StackLayout >
-                        <ImageButton Source="stats" HeightRequest="65"
+                        <ImageButton Source="stats" BackgroundColor="Transparent" HeightRequest="65"
                                  Command="{Binding stats}"/>
                         <Label Text="Historial"
                            HorizontalTextAlignment="Center"/>
@@ -101,7 +101,7 @@
                 </Grid>
                 <Grid Grid.Column="3" Grid.Row="1">
                     <StackLayout >
-                        <ImageButton Source="exit" HeightRequest="65"
+                        <ImageButton Source="exit" BackgroundColor="Transparent" HeightRequest="65"
                                  Command="{Binding salir}"/>
                         <Label Text="Salir"
                            HorizontalTextAlignment="Center"/>
@@ -109,24 +109,23 @@
                 </Grid>
             </Grid>
             <!--Grilla de Datos-->
-            <Grid Grid.Row="3">
+            <Grid Grid.Row="3" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-               <Label Text="Recargas Recientes:" 
+                <Label Text="Recargas Recientes:" 
                    FontAttributes="Bold"  
                    TextColor="Red"
                    FontSize="Large"
                    Margin="10,0,0,0" Grid.Row="0"/>
-                
+
                 <ListView  ItemsSource="{Binding ListaRecientes}"                          
                           HorizontalOptions="Center"
                           HasUnevenRows="True"
-                          Margin="20,25,20,20"
                           Grid.Row="1">
                     <ListView.Header>
-                        <Grid Margin="0,20,0,0" >
+                        <Grid Margin="0,0,0,0" >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
@@ -136,14 +135,14 @@
                                        TextColor="Black"
                                        FontAttributes="Bold"
                                        HorizontalTextAlignment="Center"
-                                        Margin="0,0,0,20"
+                                        Margin="0,0,0,5"
                                          />
                             <Label Text="Fecha"
                                        FontAttributes="Bold"
                                        TextColor="Black" 
                                        Grid.Column="2" 
                                HorizontalTextAlignment="Center"
-                               Margin="0,0,0,20"/>
+                               Margin="0,0,0,5"/>
                         </Grid>
                     </ListView.Header>
                     <ListView.ItemTemplate>

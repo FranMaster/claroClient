@@ -419,3 +419,4 @@ C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet.Android\o
 C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet.Android\obj\Release\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet.Android\obj\Release\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet.Android\obj\Release\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\A308610\source\repos\FranMaster\claroClient\ClaroNet\ClaroNet.Android\obj\Release\90\stamp\SetupDependenciesForDesigner.stamp

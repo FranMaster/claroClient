@@ -44,8 +44,7 @@ namespace ClaroNet.viewModels
 	    }
 		public LoginViewModel()
 		{
-			Email = "enoc@gmail.com";
-			Password = "1234567";
+			
 		}
 
 

@@ -16,16 +16,16 @@
         <Grid>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="0.2*" />
+                    <RowDefinition Height="0.1*" />
                     <RowDefinition/>
-                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="0.1*"/>
                 </Grid.RowDefinitions>
 
                 <Grid BackgroundColor="Transparent"/>
                 <Grid Grid.Row="1" BackgroundColor="Transparent">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
-                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="7*"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Frame Grid.Column="1" VerticalOptions="CenterAndExpand" CornerRadius="20"
@@ -64,6 +64,5 @@
 
             </Grid>
         </Grid>
-
     </ContentPage.Content>
 </ContentPage>
